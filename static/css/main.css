@@ -1,0 +1,105 @@
+body {
+    font-size: 16px;
+}
+
+section header {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    margin: 25px 0;
+    padding-bottom: 25px;
+}
+
+h1 {
+    font-size: 56px;
+    font-weight: 300;
+}
+
+h2, p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.list-horizontal .list-item {
+    display: inline-block;
+}
+
+.row {
+    display: flex;
+}
+
+.row .col {
+    flex: 50%;
+}
+
+.button {
+    display: inline-block;
+
+    margin-top: 5px;
+    font-size: 16px;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
+    cursor: pointer;
+}
+
+.button.button-blue {
+    background-color: blue;
+}
+
+.site-nav {
+    background-color: rgb(240, 240, 240);
+}
+
+.site-nav .list-item {
+    padding: 15px 5px;
+}
+
+.site-nav .list-item:first-of-type {
+    margin-left: 10px;
+}
+
+a {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+a:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.banner {
+    background-color: #e9ecef;
+    height: 600px;
+    padding: 15px 15px 15px 15px;
+    border-radius: 5px;
+}
+
+.banner:before {
+    display: block;
+    content: '';
+    background-image: url('/static/animals_banner.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 300px;
+}
+
+#root {
+    width: 1046px;
+    margin: 35px auto;
+}
+
+
+.pet-buttons {
+    padding-top: 10px;
+}
+
+.underline {
+    text-decoration: underline;
+}
