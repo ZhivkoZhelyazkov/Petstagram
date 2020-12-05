@@ -24,13 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '5w9n^9#i$$%#4+q=un!bf^rq77805#0514%%^7m%%(us9ia)19'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = os.environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'petstagram-7.herokuapp.com',
-]
+# localhost 127.0.0.1
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 
 
 # Application definition
