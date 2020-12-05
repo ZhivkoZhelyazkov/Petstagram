@@ -25,7 +25,11 @@ SECRET_KEY = '5w9n^9#i$$%#4+q=un!bf^rq77805#0514%%^7m%%(us9ia)19'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'petstagram-7.herokuapp.com',
+]
 
 
 # Application definition
