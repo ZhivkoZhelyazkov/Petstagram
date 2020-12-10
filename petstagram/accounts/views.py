@@ -2,8 +2,8 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
-from accounts.forms import SignUpForm, UserProfileForm
-from accounts.models import UserProfile
+from petstagram.accounts.forms import SignUpForm, UserProfileForm
+from petstagram.accounts.models import UserProfile
 
 
 # def page_not_found(request):

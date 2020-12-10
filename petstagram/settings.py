@@ -14,7 +14,7 @@ from os.path import join
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-import cloudinary
+# import cloudinary
 import django_heroku
 
 
@@ -38,11 +38,11 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ')
 # Application definition
 
 INSTALLED_APPS = [
-    'common',
-    'pets',
-    'accounts',
+    'petstagram.common',
+    'petstagram.pets',
+    'petstagram.accounts',
 
-    'cloudinary',
+    # 'cloudinary',
 
     'django.contrib.admin',
     'django.contrib.auth',
