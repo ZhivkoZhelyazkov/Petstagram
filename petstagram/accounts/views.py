@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 
+from django.contrib.auth import views as auth_views
 from django.views import generic as views
 
 from petstagram.accounts.forms import SignUpForm, UserProfileForm
@@ -29,6 +30,10 @@ def user_profile(request, pk=None):
             form.save()
             return redirect('current user profile')
         return redirect('current user profile')
+
+
+class SignInView(auth_views.LoginView):
+    template_name = 'accounts/signin.html'
 
 
 # def signup_user(request):
@@ -69,6 +74,10 @@ class SignUpView(views.CreateView):
         return valid
 
 
-def signout_user(request):
-    logout(request)
-    return redirect('index')
+# def signout_user(request):
+#     logout(request)
+#     return redirect('index')
+
+
+class SignOutView(auth_views.LogoutView):
+    next_page = reverse_lazy('index')
