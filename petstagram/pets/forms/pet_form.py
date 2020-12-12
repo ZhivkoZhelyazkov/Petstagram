@@ -10,7 +10,8 @@ class PetForm(forms.ModelForm):
 
     class Meta:
         model = Pet
-        fields = '__all__'
+        # fields = '__all__'
+        exclude = ('user',)
         widgets = {
             'image_url': forms.TextInput(
                 attrs={
