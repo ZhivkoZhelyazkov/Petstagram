@@ -1,4 +1,5 @@
 from django import forms
+from petstagram.pets.models import Comment
 
 
 # this will take all the pets
@@ -7,11 +8,16 @@ from django import forms
 #         model = Comment
 #         fields = '__all__'
 
-class CommentForm(forms.Form):
-    text = forms.CharField(
-        widget=forms.Textarea(
-            attrs={
-                'class': 'form-control rounded-2',
-            }
-        )
-    )
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('text',)
+        widgets = {
+            'text': forms.Textarea(
+                attrs={
+                    'class': 'form-control rounded-2',
+                    'is_required': True,
+                },
+            ),
+        }

@@ -33,7 +33,7 @@
     </div>
     <div class="d-block" style="background-color: #f1e3e3; padding:2%">
 
-        {% if pet.comment_set.exists %}
+        {% if pet.comment_set.all %}
             {% for comment in pet.comment_set.all %}
                 <div class="box">
                     {% if profile.profile_picture %}
@@ -43,7 +43,7 @@
                         <img class="rounded-circle mb-3" src="https://afribary.com/authors/anonymous-user/photo"
                              alt="Generic placeholder image" width="40" height="40">
                     {% endif %}
-                    <a href="{% url 'user profile' comment.user.user_id %}">{{ comment.user.user.username }}</a>
+                    <a href="{% url 'user profile' comment.user_id %}">{{ comment.user.user.username }}</a>
                     <h5><em>{{ comment.text }}</em></h5>
                     <hr>
                 </div>
@@ -55,7 +55,8 @@
         {% endif %}
         {% if can_comment %}
             <div class="box">
-                <form method="post" action="{% url 'pet details or comment' pet.pk %}">
+{#                <form method="post" action="{% url 'comment pet' pet.pk %}">#}
+                <form>
                     {{ form }}
                     {% csrf_token %}
                     <button class="btn btn-primary mt-2" type="submit">Add comment</button>
